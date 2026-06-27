@@ -1,0 +1,10 @@
+streamlit
+
+tensorflow==2.19.0
+keras-hub==0.26.0
+
+numpy
+pandas
+pillow
+matplotlib
+scikit-learn

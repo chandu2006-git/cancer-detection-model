@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+.env
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Training artifacts
+model/v4d_train.keras
+model/model.weights.h5
+
+model/
+*.keras
+*.h5
+# Kaggle/Colab
+.ipynb_checkpoints/
+
+# Logs
+*.log
