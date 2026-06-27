@@ -1,10 +1,10 @@
-# 🧠 DermAI – Multimodal Skin Lesion Classification
+#  DermAI – Multimodal Skin Lesion Classification
 
 > **A Vision Transformer–based multimodal deep learning system for automated skin lesion classification using dermoscopic images and patient metadata.**
 
 <p align="center">
 
-## 🚀 Live Demo
+##  Live Demo
 
 ### **https://chandu06-dermai.hf.space**
 
@@ -44,13 +44,13 @@ Unlike conventional image-only classifiers, DermAI integrates both visual and cl
 
 ## Features
 
-* 🧠 Vision Transformer (ViT-B16) backbone
-* 📷 Dermoscopic image classification
-* 👤 Multimodal prediction using patient metadata
-* 📊 Interactive probability visualization
-* 🎯 Seven-class skin lesion classification
-* ☁️ Live cloud deployment with Streamlit
-* 🤗 Hugging Face hosted demo
+*  Vision Transformer (ViT-B16) backbone
+*  Dermoscopic image classification
+*  Multimodal prediction using patient metadata
+*  Interactive probability visualization
+*  Seven-class skin lesion classification
+*  Live cloud deployment with Streamlit
+*  Hugging Face hosted demo
 
 ---
 
