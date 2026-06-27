@@ -165,16 +165,6 @@ Run the application
 streamlit run app.py
 ```
 
----
-
-## Live Demo
-
-🚀 **Try DermAI online**
-
-**https://chandu06-dermai.hf.space**
-
----
-
 ## Research Impact
 
 DermAI demonstrates how multimodal deep learning can be applied to dermatological image analysis by combining computer vision with patient metadata in a unified inference pipeline.
