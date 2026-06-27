@@ -1,106 +1,139 @@
-#  DermAI: Multimodal Skin Lesion Classification using Vision Transformers
+# 🧠 DermAI – Multimodal Skin Lesion Classification
+
+> **A Vision Transformer–based multimodal deep learning system for automated skin lesion classification using dermoscopic images and patient metadata.**
 
 <p align="center">
-  <img src="assets/dashboard.png" alt="DermAI Dashboard" width="100%">
+
+[🚀 Live Demo](https://chandu06-dermai.hf.space) •
+[📓 Research Notebook](https://www.kaggle.com/) •
+[🤗 Hugging Face](https://huggingface.co/spaces/Chandu06/dermai)
+
 </p>
+
+---
+
+## Dashboard
 
 <p align="center">
-  <b>A Vision Transformer (ViT-B16) based multimodal skin lesion classification system combining dermoscopic images with patient metadata.</b>
+<img src="assets/dashboard.png" width="100%">
 </p>
 
 ---
 
-##  Overview
+## Overview
 
-DermAI is a research-driven deep learning application for automated **7-class skin lesion classification** using the **HAM10000** dataset.
+Early identification of skin cancer can significantly improve treatment outcomes. DermAI explores how modern Vision Transformers can assist clinicians by combining **dermoscopic images** with **patient metadata** to classify common skin lesions.
 
-Unlike conventional image-only classifiers, DermAI integrates both:
+Unlike traditional image-only classifiers, DermAI integrates both visual and clinical information, allowing the model to learn richer representations of skin lesions while preserving an intuitive and easy-to-use interface.
 
-*  Dermoscopic Images
-*  Patient Metadata
-
-  * Age
-  * Sex
-  * Lesion Localization
-
-The application provides an intuitive Streamlit interface for image upload, metadata entry, prediction confidence, and probability visualization.
+The project was developed as an end-to-end research workflow—from model development and evaluation to cloud deployment—making the research accessible through an interactive web application.
 
 ---
 
-##  Features
+## Features
 
-* ✅ Vision Transformer (ViT-B16 Backbone)
-* ✅ Multimodal Learning (Image + Metadata)
-* ✅ 7 Skin Lesion Classes
-* ✅ Interactive Streamlit Dashboard
-* ✅ Confidence Distribution Visualization
-* ✅ Clean and Modern User Interface
-
----
-
-##  Dataset
-
-* **Dataset:** HAM10000 (Human Against Machine with 10,000 Training Images)
-* **Image Size:** 224 × 224
-* **Metadata Used**
-
-  * Age
-  * Sex
-  * Localization
+* 🧠 Vision Transformer (ViT-B16) backbone
+* 📷 Dermoscopic image classification
+* 👤 Multimodal prediction using patient metadata
+* 📊 Interactive probability visualization
+* 🎯 Seven-class skin lesion classification
+* ☁️ Live cloud deployment with Streamlit
+* 🤗 Hugging Face hosted demo
 
 ---
 
-##  Model Architecture
+## Supported Lesion Classes
+
+| Class    | Description                                   |
+| -------- | --------------------------------------------- |
+| AKIEC    | Actinic Keratoses / Intraepithelial Carcinoma |
+| BCC      | Basal Cell Carcinoma                          |
+| BKL      | Benign Keratosis-like Lesions                 |
+| DF       | Dermatofibroma                                |
+| Melanoma | Malignant Melanoma                            |
+| Nevus    | Melanocytic Nevus                             |
+| VASC     | Vascular Lesions                              |
+
+---
+
+## Model Architecture
+
+* **Backbone:** Vision Transformer (ViT-B16)
+* **Pretraining:** ImageNet-21k
+* **Input Resolution:** 224 × 224
+* **Framework:** TensorFlow / Keras
+* **Learning Strategy:** Transfer Learning + Fine-Tuning
+* **Inference:** Multimodal (Image + Metadata)
+
+---
+
+## Patient Metadata
+
+Alongside dermoscopic images, the model utilizes basic clinical information:
+
+* Age
+* Sex
+* Lesion Localization
+
+This multimodal approach enables the network to incorporate contextual patient information in addition to visual features.
+
+---
+
+## Performance
+
+| Metric              |      Score |
+| ------------------- | ---------: |
+| Validation Accuracy | **83.04%** |
+| Weighted F1 Score   |   **0.83** |
+| Macro F1 Score      |   **0.70** |
+| Melanoma Precision  |   **0.56** |
+| Melanoma Recall     |   **0.64** |
+| Melanoma F1 Score   |   **0.60** |
+
+---
+
+## Technology Stack
+
+* Python
+* TensorFlow
+* Keras
+* KerasHub
+* Vision Transformer (ViT-B16)
+* Streamlit
+* Hugging Face Spaces
+* NumPy
+* Pandas
+* Scikit-learn
+* Pillow
+
+---
+
+## Project Structure
 
 ```text
-Image
-   │
-ViT-B16 Backbone
-   │
-CLS Token
-   │
-───────────────┐
-               │
-Metadata Branch
-(Dense → Dropout → Dense)
-               │
-───────────────┘
-       │
- Concatenation
-       │
- Dense Layer
-       │
- Softmax (7 Classes)
+DermAI/
+│
+├── app.py
+├── style.css
+├── requirements.txt
+│
+├── configs/
+│   └── class_mapping.json
+│
+├── utils/
+│   ├── image_preprocessing.py
+│   ├── inference.py
+│   └── metadata_encoder.py
+│
+├── assets/
+│   └── dashboard.png
+│
+└── README.md
 ```
 
 ---
 
-##  Performance
-
-| Metric             |    Value |
-| ------------------ | -------: |
-| Accuracy           |  **83%** |
-| Weighted F1 Score  | **0.84** |
-| Macro F1 Score     | **0.74** |
-| Melanoma Precision | **0.56** |
-| Melanoma Recall    | **0.67** |
-| Melanoma F1        | **0.61** |
-
----
-
-##  Supported Classes
-
-* Melanoma
-* Basal Cell Carcinoma (BCC)
-* Benign Keratosis (BKL)
-* Actinic Keratosis (AKIEC)
-* Dermatofibroma (DF)
-* Vascular Lesion (VASC)
-* Melanocytic Nevus (NV)
-
----
-
-##  Installation
+## Running Locally
 
 Clone the repository
 
@@ -122,55 +155,34 @@ streamlit run app.py
 
 ---
 
-##  Repository Structure
+## Live Demo
 
-```text
-DermAI
-│
-├── assets/
-│   ├── dashboard.png
-│   └── sample.jpg
-│
-├── configs/
-│   └── class_mapping.json
-│
-├── utils/
-│   ├── image_preprocessing.py
-│   ├── inference.py
-│   └── metadata_encoder.py
-│
-├── app.py
-├── style.css
-├── requirements.txt
-└── README.md
-```
+🚀 **Try DermAI online**
+
+**https://chandu06-dermai.hf.space**
 
 ---
 
-##  Deployment Note
+## Research Impact
 
-The evaluation metrics reported above correspond to experiments performed on the HAM10000 benchmark dataset.
+DermAI demonstrates how multimodal deep learning can be applied to dermatological image analysis by combining computer vision with patient metadata in a unified inference pipeline.
 
-The Streamlit application is provided as a research demonstration of the multimodal inference pipeline. It is intended for educational and research purposes only and **must not be used for clinical diagnosis or medical decision-making**.
-
----
-
-##  Research
-
-This repository focuses on the deployment component of the DermAI project.
-
-The complete research notebook, training pipeline, experiments, and evaluation are available in the published notebook.
+While intended as a research and educational project, it showcases a complete machine learning workflow including data preparation, model development, evaluation, deployment, and interactive visualization.
 
 ---
 
-##  Author
+## Disclaimer
 
-**Chandra sekhar**
+This application is provided **for research and educational purposes only**.
 
-Deep Learning • Computer Vision • Medical AI
+It is **not** a medical device and should **not** be used as a substitute for professional medical diagnosis, treatment, or clinical decision-making.
 
 ---
 
-##  License
+## Author
 
-This project is released under the MIT License.
+**Chandu**
+
+Artificial Intelligence • Deep Learning • Computer Vision • Medical AI
+
+If you found this project interesting, consider giving the repository a ⭐.
