@@ -105,20 +105,16 @@ def encode_metadata(age, sex, localization):
 def run_inference(model, image, age, sex, localization):
     img_arr = preprocess_image(image)
     meta_arr = encode_metadata(age, sex, localization)
+
     try:
         return model.predict(
-            {
-                "image": img_arr,
-                "meta": meta_arr
-            },
-            verbose=0
+            [img_arr, meta_arr],
+            verbose=0,
         )[0]
-    except Exception:
-        try:
-            return model.predict(img_arr, verbose=0)[0]
-        except Exception as e:
-            st.error(f"Inference error: {e}")
-            return None
+
+    except Exception as e:
+        st.error(f"Inference error: {e}")
+        return None
 
 def donut_svg(pct):
     r, cx, cy, sw = 44, 60, 60, 12

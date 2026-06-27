@@ -27,3 +27,6 @@ model/
 
 # Logs
 *.log
+
+# Hugging Face Space
+dermai/
