@@ -4,6 +4,20 @@
 
 <p align="center">
 
+## 🚀 Live Demo
+
+### **https://chandu06-dermai.hf.space**
+
+[🌐 Launch DermAI](https://chandu06-dermai.hf.space)
+
+---
+
+📓 **Research Notebook** • 🤗 **Hugging Face Model** • 💻 **GitHub Repository**
+
+</p>
+
+<p align="center">
+
 [🚀 Live Demo](https://chandu06-dermai.hf.space) •
 [📓 Research Notebook](https://www.kaggle.com/) •
 [🤗 Hugging Face](https://huggingface.co/spaces/Chandu06/dermai)
@@ -24,9 +38,7 @@
 
 Early identification of skin cancer can significantly improve treatment outcomes. DermAI explores how modern Vision Transformers can assist clinicians by combining **dermoscopic images** with **patient metadata** to classify common skin lesions.
 
-Unlike traditional image-only classifiers, DermAI integrates both visual and clinical information, allowing the model to learn richer representations of skin lesions while preserving an intuitive and easy-to-use interface.
-
-The project was developed as an end-to-end research workflow—from model development and evaluation to cloud deployment—making the research accessible through an interactive web application.
+Unlike conventional image-only classifiers, DermAI integrates both visual and clinical information to provide richer representations of skin lesions through a clean, intuitive interface. The project demonstrates a complete AI workflow—from model development and evaluation to cloud deployment—making the research accessible through an interactive web application.
 
 ---
 
